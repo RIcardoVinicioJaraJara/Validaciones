@@ -15,15 +15,16 @@
         <form id="formulario01" method="POST" action="../controladores/crear_usuario.php">
             <table border>
                 <tr>
-                    <legend> CREACION DE USUARIOS</legend>
+                    <td>
+                        <legend> CREACION DE USUARIOS</legend>
+                    </td>
                 </tr>
 
                 <tr>
-                    <td><label for="cedula">Cedula (*)</label></td>
+                    <td><label for="cedula">Cedulaaaa(*)</label></td>
                     <td><input type="text" id="cedula" name="cedula" value=""
-                            placeholder="Ingrese el número de cedula ..." onkeyup="validarCedula()"
-                            onkeydown="return soloNumeros(event)" />
-                    </td>
+                            placeholder="Ingrese el número de cedula ..." onkeydown="return soloNumeros(event)"
+                            onkeyup="validarCedula(event)"></td>
                     <td><input type="checkbox" id="chCedula" value="first_checkbox" onclick="return false;"></td>
                 </tr>
 
