@@ -135,4 +135,85 @@ function validarContra(txt, id) {
     }
 }
 
+function validarTodo() {
+    var bandera = true;
+    if (!document.getElementById('chCedula').checked) {
+        var capa = document.getElementById('cedula');
+        capa.setCustomValidity('Cedula Incorrecta');
+        capa.style.border = "2px dotted  red";
+        bandera = false;
+    } else {
+        var capa = document.getElementById('cedula');
+        capa.addEventListener('change', checkPasswordValidity, true);
+        alert('aasa')
+        capa.style.border = "2px solid  green";
+    }
+
+    if (!document.getElementById('chNombre').checked) {
+        var capa = document.getElementById('nombres');
+        capa.setCustomValidity('Deben Existir dos Nombres \n Ejemplo: Juand Pedro');
+        capa.style.border = "2px dotted  red";
+        bandera = false;
+    } else {
+        var capa = document.getElementById('nombres');
+        capa.style.border = "2px solid  green";
+    }
+
+    if (!document.getElementById('chApellido').checked) {
+        var capa = document.getElementById('apellidos');
+        capa.style.border = "2px dotted  red";
+        bandera = false;
+    } else {
+        var capa = document.getElementById('apellidos');
+        capa.style.border = "2px solid  green";
+    }
+
+    if (!document.getElementById('chDireccion').checked) {
+        var capa = document.getElementById('direccion');
+        capa.style.border = "2px dotted  red";
+        bandera = false;
+    } else {
+        var capa = document.getElementById('direccion');
+        capa.style.border = "2px solid  green";
+    }
+
+    if (!document.getElementById('chTelefono').checked) {
+        var capa = document.getElementById('telefono');
+        capa.style.border = "2px dotted  red";
+        bandera = false;
+    } else {
+        var capa = document.getElementById('telefono');
+        capa.style.border = "2px solid  green";
+    }
+
+    if (!document.getElementById('chFecha').checked) {
+        var capa = document.getElementById('fechaNacimiento');
+        capa.style.border = "2px dotted  red";
+        bandera = false;
+    } else {
+        var capa = document.getElementById('fechaNacimiento');
+        capa.style.border = "2px solid  green";
+    }
+
+    if (!document.getElementById('chCorreo').checked) {
+        var capa = document.getElementById('correo');
+        capa.style.border = "2px dotted  red";
+        bandera = false;
+    } else {
+        var capa = document.getElementById('correo');
+        capa.style.border = "2px solid  green";
+    }
+
+    if (!document.getElementById('chContrasena').checked) {
+        var capa = document.getElementById('contrasena');
+        capa.style.border = "2px dotted  red";
+        bandera = false;
+    } else {
+        var capa = document.getElementById('contrasena');
+        capa.style.border = "2px solid  green";
+    }
+
+    return bandera;
+}
+
 
