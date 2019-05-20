@@ -110,4 +110,29 @@ function valDir(txt, id) {
     }
 }
 
+function validarCorreo(txt, id) {
+    f = txt.split('@');
+    if (f.length >= 2) {
+        if (f[0].length >= 3) {
+            if (f[1] == 'ups.edu.ec' || f[1] == 'est.ups.edu.ec') {
+                document.getElementById(id).checked = true;
+            } else {
+                document.getElementById(id).checked = false;
+            }
+        } else {
+            document.getElementById(id).checked = false;
+        }
+    } else {
+        document.getElementById(id).checked = false;
+    }
+}
+
+function validarContra(txt, id) {
+    if (txt.length >= 3) {
+        document.getElementById(id).checked = true;
+    } else {
+        document.getElementById(id).checked = false;
+    }
+}
+
 
