@@ -15,65 +15,70 @@
         <form id="formulario01" method="POST" action="../controladores/crear_usuario.php">
             <table border>
                 <tr>
-                    <td>
-                        <legend> CREACION DE USUARIOS</legend>
                     </td>
-                </tr>
-
+                    <legend> CREACION DE USUARIOS</legend>
                 <tr>
-                    <td><label for="cedula">Cedulaaaa(*)</label></td>
-                    <td><input type="text" id="cedula" name="cedula" value=""
-                            placeholder="Ingrese el número de cedula ..." onkeydown="return soloNumeros(event)"
-                            onkeyup="validarCedula(event)"></td>
+                    <td><label for="cedula">Cedula(*)</label></td>
+                    <td><input class="txt" type="text" id="cedula" name="cedula" value=""
+                            placeholder="Ingrese el número de cedula ...(10#EC)"
+                            onkeydown="return soloNumeros(event, this.value)" onkeyup="validarCedula(event)"></td>
                     <td><input type="checkbox" id="chCedula" value="first_checkbox" onclick="return false;"></td>
                 </tr>
 
                 <tr>
                     <td><label for="nombres">Nombres (*)</label></td>
-                    <td><input type="text" id="nombres" name="nombres" value="" placeholder="Ingrese sus dos nombres..."
-                            required /></td>
+                    <td><input class="txt" type="text" id="nombres" name="nombres" value=""
+                            placeholder="Ingrese sus dos nombres...(2N JUAN PEDRO)"
+                            onkeypress="return soloLetras(event)" onkeyup="dosNombres(this.value, 'chNombre')" /></td>
                     <td><input type="checkbox" id="chNombre" value="first_checkbox" onclick="return false;"></td>
                 </tr>
 
                 <tr>
                     <td><label for="apellidos">Apelidos (*)</label></td>
-                    <td><input type="text" id="apellidos" name="apellidos" value=""
-                            placeholder="Ingrese sus dos apellidos..." required /></td>
+                    <td><input class="txt" type="text" id="apellidos" name="apellidos" value=""
+                            placeholder="Ingrese sus dos apellidos...(2A JARA JARA)"
+                            onkeydown="return soloLetras(event)" onkeyup="dosNombres(this.value, 'chApellido')" /></td>
                     <td><input type="checkbox" id="chApellido" value="first_checkbox" onclick="return false;"></td>
                 </tr>
 
                 <tr>
                     <td><label for="direccion">Dirección (*)</label></td>
-                    <td><input type="text" id="direccion" name="direccion" value=""
-                            placeholder="Ingrese su dirección ..." required /></td>
+                    <td><input class="txt" type="text" id="direccion" name="direccion" value=""
+                            placeholder="Ingrese su dirección ...(MINIMO 4 LETRAS)"
+                            onkeyup="valDir(this.value, 'chDireccion')" /></td>
                     <td><input type="checkbox" id="chDireccion" value="first_checkbox" onclick="return false;"></td>
                 </tr>
 
 
                 <tr>
                     <td><label for="telefono">Teléfono (*)</label></td>
-                    <td><input type="text" id="telefono" name="telefono" value=""
-                            placeholder="Ingrese su número telefónico..." required /></td>
+                    <td><input class="txt" type="text" id="telefono" name="telefono" value=""
+                            placeholder="Ingrese su número telefónico...(10 NUMEROS)"
+                            onkeydown="return soloNumeros(event, this.value)"
+                            onkeyup="telefonoVal(this.value, 'chTelefono')"></td>
+                    </td>
                     <td><input type="checkbox" id="chTelefono" value="first_checkbox" onclick="return false;"></td>
                 </tr>
 
                 <tr>
                     <td><label for="fecha">Fecha Nacimiento (*)</label></td>
-                    <td><input type="text" id="fechaNacimiento" name="fechaNacimiento" value=""
-                            placeholder="Ingrese sufecha de nacimiento ..." required /></td>
+                    <td><input class="txt" type="text" id="fechaNacimiento" name="fechaNacimiento" value=""
+                            placeholder="Ingrese fecha de nacimiento ... (dd/mm/aaaa)"
+                            onkeydown="return fecha10(this.value, event)" onkeyup="validarFecha(this.value, 'chFecha')">
+                    </td>
                     <td><input type="checkbox" id="chFecha" value="first_checkbox" onclick="return false;"></td>
                 </tr>
 
                 <tr>
                     <td><label for="correo">Correo electrónico (*)</label></td>
-                    <td><input type="text" id="correo" name="correo" value=""
+                    <td><input class="txt" type="text" id="correo" name="correo" value=""
                             placeholder="Ingrese su correo electrónico..." /></td>
                     <td><input type="checkbox" id="chCorreo" value="first_checkbox" onclick="return false;"></td>
                 </tr>
 
                 <tr>
                     <td><label for="correo">Contraseña (*)</label></td>
-                    <td><input type="password" id="contrasena" name="contrasena" value=""
+                    <td><input class="txt" type="password" id="contrasena" name="contrasena" value=""
                             placeholder="Ingrese sucontraseña ..." /></td>
                     <td><input type="checkbox" id="chContrasena" value="first_checkbox" onclick="return false;"></td>
                 </tr>
