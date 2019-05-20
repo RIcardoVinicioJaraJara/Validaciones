@@ -75,7 +75,7 @@ function validarFecha(fecha, id) {
     if (fecha.length == 10) {
         f = fecha.split('/');
         var Anio = f[2]
-        var Mes = f[1]
+        var Mes = f[1] - 1
         var Dia = f[0]
         var VFecha = new Date(Anio, Mes, Dia);
         if ((VFecha.getFullYear() == Anio) && (VFecha.getMonth() == Mes) && (VFecha.getDate() == Dia)) {
@@ -134,83 +134,111 @@ function validarContra(txt, id) {
         document.getElementById(id).checked = false;
     }
 }
-
 function validarTodo() {
     var bandera = true;
     if (!document.getElementById('chCedula').checked) {
         var capa = document.getElementById('cedula');
-        capa.setCustomValidity('Cedula Incorrecta');
         capa.style.border = "2px dotted  red";
+        var cp1 = document.getElementById('pCed')
+        cp1.innerHTML = ("Cedula Incorrecta, Debe ser una cedula Ecuatoria");
+        cp1.style.fontSize = '10px';
         bandera = false;
     } else {
         var capa = document.getElementById('cedula');
-        capa.addEventListener('change', checkPasswordValidity, true);
-        alert('aasa')
         capa.style.border = "2px solid  green";
+        document.getElementById('pCed').innerHTML = ("");
+        console.log('bien')
     }
 
     if (!document.getElementById('chNombre').checked) {
         var capa = document.getElementById('nombres');
-        capa.setCustomValidity('Deben Existir dos Nombres \n Ejemplo: Juand Pedro');
         capa.style.border = "2px dotted  red";
+        var cp1 = document.getElementById('pNom')
+        cp1.innerHTML = ("Nombre Incorrecto, Debe ser dos nombres, Compruebe los espacios");
+        cp1.style.fontSize = '10px';
         bandera = false;
     } else {
         var capa = document.getElementById('nombres');
         capa.style.border = "2px solid  green";
+        document.getElementById('pNom').innerHTML = ("");
     }
 
     if (!document.getElementById('chApellido').checked) {
         var capa = document.getElementById('apellidos');
         capa.style.border = "2px dotted  red";
+        var cp1 = document.getElementById('pApe')
+        cp1.innerHTML = ("Apellido Incorrecto, Debe ser dos apellidos, Compruebe los espacios");
+        cp1.style.fontSize = '10px';
         bandera = false;
     } else {
         var capa = document.getElementById('apellidos');
         capa.style.border = "2px solid  green";
+        document.getElementById('pApe').innerHTML = ("");
     }
 
     if (!document.getElementById('chDireccion').checked) {
         var capa = document.getElementById('direccion');
         capa.style.border = "2px dotted  red";
+        var cp1 = document.getElementById('pDir')
+        cp1.innerHTML = ("Direccion Incorrecto, Como minimo debe tener 4 letras");
+        cp1.style.fontSize = '10px';
         bandera = false;
     } else {
         var capa = document.getElementById('direccion');
         capa.style.border = "2px solid  green";
+        document.getElementById('pDir').innerHTML = ("");
     }
 
     if (!document.getElementById('chTelefono').checked) {
         var capa = document.getElementById('telefono');
         capa.style.border = "2px dotted  red";
+        var cp1 = document.getElementById('pTel')
+        cp1.innerHTML = ("Telefono Incorrecto, Como minimo debe tener 10 numeros");
+        cp1.style.fontSize = '10px';
         bandera = false;
     } else {
         var capa = document.getElementById('telefono');
         capa.style.border = "2px solid  green";
+        document.getElementById('pTel').innerHTML = ("");
     }
 
     if (!document.getElementById('chFecha').checked) {
         var capa = document.getElementById('fechaNacimiento');
         capa.style.border = "2px dotted  red";
+        var cp1 = document.getElementById('pFec')
+        cp1.innerHTML = ("Fecha Incorrecto, El formato es 'dd/mm/aaa' Ejm: 10/25/1997");
+        cp1.style.fontSize = '10px';
         bandera = false;
     } else {
         var capa = document.getElementById('fechaNacimiento');
         capa.style.border = "2px solid  green";
+        document.getElementById('pFec').innerHTML = ("");
     }
 
     if (!document.getElementById('chCorreo').checked) {
         var capa = document.getElementById('correo');
+        var cp1 = document.getElementById('pCor')
         capa.style.border = "2px dotted  red";
+        cp1.innerHTML = ("Correo Incorrecto, Ejemplos:  'abc@ups.edu.ec' o 'abc@est.ups.edu.ec'");
+        cp1.style.fontSize = '10px';
         bandera = false;
     } else {
         var capa = document.getElementById('correo');
         capa.style.border = "2px solid  green";
+        document.getElementById('pCor').innerHTML = ("");
     }
 
     if (!document.getElementById('chContrasena').checked) {
         var capa = document.getElementById('contrasena');
         capa.style.border = "2px dotted  red";
+        var cp1 = document.getElementById('pPas')
+        cp1.innerHTML = ("Contraseña Incorrecta, Debe contar minimo 3 caracteres");
+        cp1.style.fontSize = '10px';
         bandera = false;
     } else {
         var capa = document.getElementById('contrasena');
         capa.style.border = "2px solid  green";
+        document.getElementById('pPas').innerHTML = ("");
     }
 
     return bandera;

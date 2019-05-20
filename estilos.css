@@ -19,5 +19,9 @@ legend{
 }
 
 .txt{
-    width:  280px !important;
+    width:  380px !important;
+}
+
+input{
+    font-size: 15px;
 }

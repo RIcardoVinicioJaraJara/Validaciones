@@ -20,7 +20,9 @@
                     <td><label for="cedula">Cedula(*)</label></td>
                     <td><input class="txt" type="text" id="cedula" name="cedula" value=""
                             placeholder="Ingrese el número de cedula ...(10#EC)"
-                            onkeydown="return soloNumeros(event, this.value)" onkeyup="validarCedula(event)"></td>
+                            onkeydown="return soloNumeros(event, this.value)" onkeyup="validarCedula(event)"><br>
+                        <a id="pCed"></a>
+                    </td>
                     <td><input type="checkbox" id="chCedula" value="first_checkbox" onclick="return false;"></td>
                 </tr>
 
@@ -28,7 +30,8 @@
                     <td><label for="nombres">Nombres (*)</label></td>
                     <td><input class="txt" type="text" id="nombres" name="nombres" value=""
                             placeholder="Ingrese sus dos nombres...(2N JUAN PEDRO)"
-                            onkeypress="return soloLetras(event)" onkeyup="dosNombres(this.value, 'chNombre')" /></td>
+                            onkeypress="return soloLetras(event)" onkeyup="dosNombres(this.value, 'chNombre')" /><br>
+                        <a id="pNom"></a></td>
                     <td><input type="checkbox" id="chNombre" value="first_checkbox" onclick="return false;"></td>
                 </tr>
 
@@ -36,7 +39,8 @@
                     <td><label for="apellidos">Apelidos (*)</label></td>
                     <td><input class="txt" type="text" id="apellidos" name="apellidos" value=""
                             placeholder="Ingrese sus dos apellidos...(2A JARA JARA)"
-                            onkeydown="return soloLetras(event)" onkeyup="dosNombres(this.value, 'chApellido')" /></td>
+                            onkeydown="return soloLetras(event)" onkeyup="dosNombres(this.value, 'chApellido')" /><br>
+                        <a id="pApe"></a></td>
                     <td><input type="checkbox" id="chApellido" value="first_checkbox" onclick="return false;"></td>
                 </tr>
 
@@ -44,7 +48,8 @@
                     <td><label for="direccion">Dirección (*)</label></td>
                     <td><input class="txt" type="text" id="direccion" name="direccion" value=""
                             placeholder="Ingrese su dirección ...(MINIMO 4 LETRAS)"
-                            onkeyup="valDir(this.value, 'chDireccion')" /></td>
+                            onkeyup="valDir(this.value, 'chDireccion')" /><br>
+                        <a id="pDir"></a></td>
                     <td><input type="checkbox" id="chDireccion" value="first_checkbox" onclick="return false;"></td>
                 </tr>
 
@@ -54,7 +59,8 @@
                     <td><input class="txt" type="text" id="telefono" name="telefono" value=""
                             placeholder="Ingrese su número telefónico...(10 NUMEROS)"
                             onkeydown="return soloNumeros(event, this.value)"
-                            onkeyup="telefonoVal(this.value, 'chTelefono')"></td>
+                            onkeyup="telefonoVal(this.value, 'chTelefono')"><br>
+                        <a id="pTel"></a></td>
                     </td>
                     <td><input type="checkbox" id="chTelefono" value="first_checkbox" onclick="return false;"></td>
                 </tr>
@@ -63,7 +69,9 @@
                     <td><label for="fecha">Fecha Nacimiento (*)</label></td>
                     <td><input class="txt" type="text" id="fechaNacimiento" name="fechaNacimiento" value=""
                             placeholder="Ingrese fecha de nacimiento ... (dd/mm/aaaa)"
-                            onkeydown="return fecha10(this.value, event)" onkeyup="validarFecha(this.value, 'chFecha')">
+                            onkeydown="return fecha10(this.value, event)"
+                            onkeyup="validarFecha(this.value, 'chFecha')"><br>
+                        <a id="pFec"></a>
                     </td>
                     <td><input type="checkbox" id="chFecha" value="first_checkbox" onclick="return false;"></td>
                 </tr>
@@ -72,7 +80,8 @@
                     <td><label for="correo">Correo electrónico (*)</label></td>
                     <td><input class="txt" type="text" id="correo" name="correo" value=""
                             placeholder="Ingrese correo electrónico...(abc@ups.edu.ec)"
-                            onkeyup="validarCorreo(this.value, 'chCorreo')" /></td>
+                            onkeyup="validarCorreo(this.value, 'chCorreo')" /><br>
+                        <a id="pCor"></a></td>
                     <td><input type="checkbox" id="chCorreo" value="first_checkbox" onclick="return false;"></td>
                 </tr>
 
@@ -80,7 +89,8 @@
                     <td><label for="correo">Contraseña (*)</label></td>
                     <td><input class="txt" type="password" id="contrasena" name="contrasena" value=""
                             placeholder="Ingrese sucontraseña ... (MINIMO 3 LETRAS)"
-                            onkeyup="validarContra(this.value, 'chContrasena')" />
+                            onkeyup="validarContra(this.value, 'chContrasena')" /><br>
+                        <a id="pPas"></a>
                     </td>
                     <td><input type="checkbox" id="chContrasena" value="first_checkbox" onclick="return false;"></td>
                 </tr>
